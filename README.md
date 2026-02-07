@@ -18,9 +18,8 @@ This project demonstrates Linux administration skills by creating and managing u
 - AMI: Amazon Linux 2
 - Instance type: t2.micro
 - Security Group: Allow SSH (22)
+<img width="1919" height="1024" alt="image" src="https://github.com/user-attachments/assets/261cc84a-8054-48ca-9784-e6671701df1e" />
 
-**Screenshot:**
-images/ec2-launch.png
 
 ---
 
@@ -29,43 +28,34 @@ images/ec2-launch.png
 ssh -i "server1.pem" ec2-user@<public-ip>
 ```
 
-**Screenshot:**
-images/ssh-connect.png
+<img width="1919" height="1010" alt="image" src="https://github.com/user-attachments/assets/56e05da9-3d87-42f6-84f0-5b3085717e32" />
 
 ---
 
 ### 3. Update System
 ```bash
 sudo yum update -y
-```
-
----
+<img width="1181" height="509" alt="image" src="https://github.com/user-attachments/assets/8fa59629-deaf-42bf-b62d-b9cf40411a59" />
 
 ### 4. Create a New User
 ```bash
 sudo adduser adminuser
-```
-
-**Screenshot:**
-images/user-create.png
 
 ---
 
 ### 5. Set Password for User
 ```bash
 sudo passwd adminuser
-```
+<img width="1388" height="968" alt="image" src="https://github.com/user-attachments/assets/fc051bb6-6ba2-46a6-ba10-0694d70d24a4" />
 
----
 
 ### 6. Add User to Sudo Group
 ```bash
 sudo usermod -aG wheel adminuser
 ```
 **Explanation:** Adds `adminuser` to the `wheel` group for sudo privileges.
+<img width="952" height="596" alt="image" src="https://github.com/user-attachments/assets/ab901e58-d671-4d31-8a5e-ecf3378fb513" />
 
-**Screenshot:**
-images/user-wheel.png
 
 ---
 
@@ -85,12 +75,8 @@ sudo yum update -y
 ```bash
 sudo groupadd dev
 sudo usermod -aG dev adminuser
-```
 
-**Screenshot:**
-images/group-dev.png
 
----
 
 ### 9. Set File Permissions
 Create a shared directory:
@@ -100,7 +86,7 @@ sudo chown :dev /opt/devdata
 sudo chmod 770 /opt/devdata
 ```
 
----
+<img width="937" height="464" alt="image" src="https://github.com/user-attachments/assets/2671488d-c088-4630-9b47-9b3a78cd0716" />
 
 ### 10. Verify Permissions
 - Check directory permissions:
@@ -119,7 +105,8 @@ groups adminuser
 Expected output:
 ```
 adminuser : adminuser wheel dev
-```
+<img width="959" height="391" alt="image" src="https://github.com/user-attachments/assets/28232b47-3fdc-4bce-9604-97fa2509e283" />
+
 
 - Test access:
 ```bash
@@ -127,8 +114,7 @@ su - adminuser
 touch /opt/devdata/testfile
 ```
 
-**Screenshot:**
-images/permissions.png
+<img width="957" height="610" alt="image" src="https://github.com/user-attachments/assets/f5afd5a7-d430-4dc1-b942-1363142105e3" />
 
 ---
 
